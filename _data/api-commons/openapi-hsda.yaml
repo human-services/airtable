@@ -167,42 +167,9 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
-    post:
-      summary: Add service with full details
-      description: Creates a new service entry with full details
-      operationId: addServicesComplete
-      parameters:
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/service_full'
-      security:
-        - appid: []
-        - appkey: []
-      responses:
-        '200':
-          description: Service Complete Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/service_full"
-        '403':
-          description: No Access Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/error_response"
-        '500':
-          description: Error Response
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/error_response"
-      tags:
-      - Services
 securityDefinitions:
-  appid:
-    type: api_key
+  api_key:
+    type: apiKey
     in: query
     name: api_key
 definitions:
