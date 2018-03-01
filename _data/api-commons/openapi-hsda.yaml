@@ -290,9 +290,6 @@ definitions:
       description:
         description: 'A description of this location.'
         type: string
-      transportation:
-        description: 'A description of the access to public or private transportation to and from the location.'
-        type: string
       latitude:
         description: 'Y coordinate of location expressed in decimal degrees in WGS84 datum.'
         type: string
@@ -327,10 +324,6 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/service"
-      accessibility_for_disabilities:
-        type: "array"
-        items:
-          $ref: "#/definitions/accessibility_for_disabilities"
     required:
       - id
   organization_full:
@@ -371,19 +364,10 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/contact"
-      funding:
-        description: 'The funding sub-subresource.'
-        type: "array"
-        items:
-          $ref: "#/definitions/funding"
       locations:
         type: "array"
         items:
           $ref: "#/definitions/location"
-      programs:
-        type: "array"
-        items:
-          $ref: "#/definitions/program"
       services:
         type: "array"
         items:
@@ -415,20 +399,8 @@ definitions:
       number:
         description: 'The phone number.'
         type: string
-      extension:
-        description: 'The extension of the phone number.'
-        type: string
       type:
         description: 'Whether the phone number relates to a fixed or cellular phone.'
-        type: string
-      department:
-        description: 'The department for which this is the phone number.'
-        type: string
-      language:
-        description: 'A comma separated list of ISO 639-1, or ISO 639-2 [language codes](available at http://www.loc.gov/standards/iso639-2/php/code_list.php) to represent the languages available from this phone service. The three-letter codes from ISO 639-2 provide greater accuracy when describing variants of languages, which may be relevant to particular communities.'
-        type: string
-      description:
-        description: 'A description providing extra information about the phone service (e.g. any special arrangements for accessing, or details of availability at particular times.'
         type: string
     required:
       - id
@@ -599,18 +571,6 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/contact"
-      eligibility:
-        type: "array"
-        items:
-          $ref: "#/definitions/eligibility"
-      fees:
-        type: "array"
-        items:
-          $ref: "#/definitions/fee"
-      funding:
-        type: "array"
-        items:
-          $ref: "#/definitions/funding"
       regular_schedule:
         type: "array"
         items:
@@ -619,22 +579,10 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/holiday_schedule"
-      languages:
-        type: "array"
-        items:
-          $ref: "#/definitions/language"
-      payment_accepted:
-        type: "array"
-        items:
-          $ref: "#/definitions/payment_accepted"
       phones:
         type: "array"
         items:
           $ref: "#/definitions/phone"
-      required_documents:
-        type: "array"
-        items:
-          $ref: "#/definitions/required_document"
       service_area:
         type: "array"
         items:
