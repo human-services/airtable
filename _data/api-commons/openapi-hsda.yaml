@@ -239,6 +239,37 @@ definitions:
     required:
       - id
       - name
+  location:
+    description: 'Details of the locations where organizations operate. Locations may be virtual, and one organization may have many locations.'
+    type: object
+    properties:
+      id:
+        description: 'Each location must have a unique identifier.'
+        type: string
+      organization_id:
+        description: 'Each location must belong to a single organization. The identifier of the organization should be given here.'
+        type: string
+      name:
+        description: 'The name of the location.'
+        type: string
+      alternate_name:
+        description: 'An alternative name for the location.'
+        type: string
+      description:
+        description: 'A description of this location.'
+        type: string
+      transportation:
+        description: 'A description of the access to public or private transportation to and from the location.'
+        type: string
+      latitude:
+        description: 'Y coordinate of location expressed in decimal degrees in WGS84 datum.'
+        type: string
+      longitude:
+        description: 'X coordinate of location expressed in decimal degrees in WGS84 datum.'
+        type: string
+    required:
+      - id
+      - name
   location_full:
     description: 'Full location details of an organization.'
     properties:
@@ -271,10 +302,6 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/holiday_schedule"
-      languages:
-        type: "array"
-        items:
-          $ref: "#/definitions/language"
       postal_address:
         type: "array"
         items:
@@ -293,6 +320,42 @@ definitions:
           $ref: "#/definitions/service"
     required:
       - id
+  organization:
+    description: 'Provides basic description and details about each organization delivering services. Each service should be linked to the organization responsible for its delivery. One organization may deliver many services.'
+    properties:
+      id:
+        description: 'Each organization must have a unique identifier.'
+        type: string
+      name:
+        description: 'The official or public name of the organization.'
+        type: string
+      alternate_name:
+        description: 'Alternative or commonly used name for the organization.'
+        type: string
+      description:
+        description: 'A brief summary about the organization. It can contain markup such as HTML or Markdown.'
+        type: string
+      email:
+        description: 'The contact e-mail address for the organization.'
+        type: string
+      url:
+        description: 'The URL (website address) of the organization.'
+        type: string
+      tax_status:
+        description: 'Government assigned tax designation for for tax-exempt organizations.'
+        type: string
+      tax_id:
+        description: 'A government issued identifier used for the purpose of tax administration.'
+        type: string
+      year_incorporated:
+        description: 'The year in which the organization was legally formed.'
+        type: string
+      legal_status:
+        description: 'The legal status defines the conditions that an organization is operating under; e.g. non-profit, private corporation or a government organization.'
+        type: string
+    required:
+      - id
+      - description      
   organization_full:
     description: 'Provides a full description of an organization entity'
     properties:
@@ -486,6 +549,57 @@ definitions:
     required:
       - id
       - weekday
+  service:
+    description: 'Services are provided by organizations to a range of different groups. Details on where each service is delivered are contained in the services_at_location table.'
+    properties:
+      id:
+        description: 'Each service must have a unique identifier.'
+        type: string
+      organization_id:
+        description: 'The identifier of the organization that provides this service.'
+        type: string
+      program_id:
+        description: 'The identifier of the program this service is delivered under.'
+        type: string
+      location_id:
+        description: 'The identifier of the location where this service is delivered.'
+        type: string
+      name:
+        description: 'The official or public name of the service.'
+        type: string
+      alternate_name:
+        description: 'Alternative or commonly used name for a service.'
+        type: string
+      description:
+        description: 'A description of the service.'
+        type: string
+      url:
+        description: 'URL of the service.'
+        type: string
+      email:
+        description: 'Email address for the service.'
+        type: string
+      status:
+        description: 'The current status of the service.'
+        type: string
+      interpretation_services:
+        description: 'A description of any interpretation services available for accessing this service.'
+        type: string
+      application_process:
+        description: 'The steps needed to access the service.'
+        type: string
+      wait_time:
+        description: 'Time a client may expect to wait before receiving a service.'
+        type: string
+      fees:
+        description: 'Details of any charges for service users to access this service.'
+        type: string
+      accreditations:
+        description: 'Details of any accreditations. Accreditation is the formal evaluation of an organization or program against best practice standards set by an accrediting organization.'
+        type: string
+      licenses:
+        description: 'An organization may have a license issued by a government entity to operate legally. A list of any such licenses can be provided here.'
+        type: string
   service_full:
     description: Full details about a service.
     properties:
