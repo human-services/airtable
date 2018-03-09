@@ -79,11 +79,11 @@ We're all proud to present this portal to you.</p>
 			<h2 id="auth-header">Authentication</h2>
 		</header>
     <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-key-circle.png" align="right" width="10%" style="padding: 15px;" /></p>
-		<p>This site requires using an API key which is issued as part of the AirTable configuration.
+		<p>This site requires using an API key which is issued as part of the AirTable configuration. If you do not hav an API key you won't be able to pull any data from the API.
     <ul id="auth-keys">
       <li id="auth-appid"><strong>api_key</strong> - The API key.</li>
     </ul>
-    <p>It only takes one key for now, which is issued by AirTable--we can do more later.</p>
+    <p>It only takes one key for now, which is issued by AirTable--we can do more later, if more than one key is needed for a varietiy of applications.</p>
 	</div>
 </section>
 
@@ -103,7 +103,7 @@ window.onload = function() {
 
   // HSDS
   const hsda_full_ui = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/human-services/airtable/master/_data/api-commons/openapi-hsda.yaml",
+    url: "https://raw.githubusercontent.com/human-services/airtable/master/_data/openapi.yaml",
     dom_id: '#hsda-full-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -124,7 +124,7 @@ window.onload = function() {
 		<header>
 			<h2>Support</h2>
 		</header>
-		<p>Need some support text.</p>
+		<p>If you have any questions, we recommend leaving a comment on the Github issues for this project and we'll respond there. If you feel it is important, feel free to email us using the email below.</p>
 		<table cellpadding="10" cellspacing="10" width="100%">
 			<tr style="border: 1px solid #FFF;">
 
@@ -134,17 +134,12 @@ window.onload = function() {
 				</td>
 
 				<td align="center" valign="top" style="background-color:#FFF;">
-					<a href="https://twitter.com/apievangelist/"><img src="/images/bw-twitter-icon.png" width="75" align="center"></a>
-					<a href="https://twitter.com/apievangelist/">Twitter</a>
-				</td>
-
-				<td align="center" valign="top" style="background-color:#FFF;">
-					<a href="/cdn-cgi/l/email-protection#e38a8d858ca382938a8695828d84868f8a9097cd808c8e"><img src="/images/bw-email-at.png" width="75" align="center"></a>
-					<a href="/cdn-cgi/l/email-protection#6f060109002f0e1f060a190e01080a03061c1b410c0002">Email</a>
+					<a href="mailto:info@email.com"><img src="/images/bw-email-at.png" width="75" align="center"></a>
+					<a href="mailto:info@email.com">Email</a>
 				</td>
 
 			</tr>
 		</table>
-		<p>Need some more support text</p>
+		<p>We will do our best to get back to you with any support related answers, and happy to work with you to make the API as usable as it possibly can for your particular application.</p>
 	</div>
 </section>
