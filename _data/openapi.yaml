@@ -38,6 +38,8 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Locations
+      security:
+        - api_key: []   
   /locations/full/{location_id}/:
     get:
       summary: Get location with full details
@@ -64,6 +66,8 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Locations
+      security:
+        - api_key: []
   /organizations/full/:
     get:
       summary: Get list of organizations with full details
@@ -84,6 +88,8 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Organizations
+      security:
+        - api_key: []
   /organizations/full/{organization_id}/:
     get:
       summary: Get organization with full details
@@ -110,6 +116,8 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Organizations
+      security:
+        - api_key: []
   /services/full/:
     get:
       summary: Get all services with full details
@@ -130,6 +138,8 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
+      security:
+        - api_key: []
   /services/full/{service_id}/:
     get:
       summary: Get service with full details
@@ -156,6 +166,8 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Services
+      security:
+        - api_key: []
 securityDefinitions:
   api_key:
     type: apiKey
