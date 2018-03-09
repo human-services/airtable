@@ -23,35 +23,6 @@ paths:
       summary: Get all locations with full details
       description: Returns a list of locations with full details and filtering support
       operationId: listLocationsComplete
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sort_by
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Location Complete Response
@@ -98,35 +69,6 @@ paths:
       summary: Get list of organizations with full details
       description: Returns a list of organizations with full schema and filtering support
       operationId: listOrganizationsComplete
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sort_by
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Organization Complete Response
@@ -173,35 +115,6 @@ paths:
       summary: Get all services with full details
       description: Returns a list of services with full details and filtering support
       operationId: listServicesComplete
-      parameters:
-        - in: query
-          type: string
-          name: query
-          description: A query to filter list by (up to provider to determine what to search)
-        - in: query
-          type: string
-          name: queries
-          description: A comma separate list of queries with specific fields.
-        - in: query
-          type: number
-          name: page
-          default: 0
-          description: The particular page of results.
-        - in: query
-          type: number
-          name: per_page
-          default: 25
-          description: Number of records to return per page, up to 100.
-        - in: query
-          type: string
-          name: sort_by
-          default: name
-          description: Which field to sort by.
-        - in: query
-          type: string
-          name: order
-          default: asc
-          description: Which order to sort by (asc,desc).
       responses:
         '200':
           description: Service Complete Response
