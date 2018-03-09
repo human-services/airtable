@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
-  title: "Human Services Data API"
-  description: "This is a specification describing the Human Services Data API, using the Human Services Data Specification (HSDS). This has been extracted from the Ohana API deployment, but will be standardized to refer to the universal standard that will apply to any HSDS/A compliant API."
+  title: "Airtable Driven Human Services Data API"
+  description: "This is a specification describing the Human Services Data API, using the Human Services Data Specification (HSDS). This has been extracted from the Ohana API deployment, but will be standardized to refer to the universal standard that will apply to any HSDS/A compliant API. This particular version is just a facade for an Airtable version of the system, which proxies the Airtable API."
   termsOfService: "https://openreferral.org/documentation/"
   contact:
     name: Open Referral
@@ -11,14 +11,12 @@ info:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.2
-host: hsda.api.adopta.agency
+host: http://airtable.dev.adopta.agency/
 basePath: /
 schemes:
 - http
 produces:
 - application/json
-- application/xml
-- text/csv
 paths:
   /locations/full/:
     get:
@@ -54,6 +52,32 @@ paths:
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Location Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/location_full"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Locations
+  /locations/full/{location_id}/:
+    get:
+      summary: Get location with full details
+      description: Returns a location entry with full details
+      operationId: getLocationComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: location_id
+          description: The location id.
       responses:
         '200':
           description: Location Complete Response
@@ -118,6 +142,32 @@ paths:
               $ref: "#/definitions/error_response"
       tags:
       - Organizations
+  /organizations/full/{organization_id}/:
+    get:
+      summary: Get organization with full details
+      description: Returns an organization entry with full details by Id
+      operationId: getOrganizationComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: organization_id
+          description: The organization id.
+      responses:
+        '200':
+          description: Organization Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/organization_full"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Organizations
   /services/full/:
     get:
       summary: Get all services with full details
@@ -152,6 +202,32 @@ paths:
           name: order
           default: asc
           description: Which order to sort by (asc,desc).
+      responses:
+        '200':
+          description: Service Complete Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/service_full"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/error_response"
+      tags:
+      - Services
+  /services/full/{service_id}/:
+    get:
+      summary: Get service with full details
+      description: Returns a service entry with full details
+      operationId: getServiceComplete
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: service_id
+          description: The service id.
       responses:
         '200':
           description: Service Complete Response
