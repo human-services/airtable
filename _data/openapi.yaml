@@ -18,7 +18,7 @@ schemes:
 produces:
 - application/json
 paths:
-  locations/full/:
+  /locations/full/:
     get:
       summary: Get all locations with full details
       description: Returns a list of locations with full details and filtering support
@@ -40,7 +40,7 @@ paths:
       - Locations
       security:
         - api_key: []
-  locations/full/{location_id}/:
+  /locations/full/{location_id}/:
     get:
       summary: Get location with full details
       description: Returns a location entry with full details
@@ -68,7 +68,7 @@ paths:
       - Locations
       security:
         - api_key: []
-  organizations/full/:
+  //organizations/full/:
     get:
       summary: Get list of organizations with full details
       description: Returns a list of organizations with full schema and filtering support
@@ -90,7 +90,7 @@ paths:
       - Organizations
       security:
         - api_key: []
-  organizations/full/{organization_id}/:
+  /organizations/full/{organization_id}/:
     get:
       summary: Get organization with full details
       description: Returns an organization entry with full details by Id
@@ -118,7 +118,7 @@ paths:
       - Organizations
       security:
         - api_key: []
-  services/full/:
+  /services/full/:
     get:
       summary: Get all services with full details
       description: Returns a list of services with full details and filtering support
@@ -140,7 +140,7 @@ paths:
       - Services
       security:
         - api_key: []
-  services/full/{service_id}/:
+  /services/full/{service_id}/:
     get:
       summary: Get service with full details
       description: Returns a service entry with full details
